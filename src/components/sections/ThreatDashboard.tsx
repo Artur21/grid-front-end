@@ -13,13 +13,13 @@ const INITIAL_THREATS = [
 
 const LOG_LINES = [
   '> [ALERT] Modbus command replay detected on OT segment 192.168.10.0/24',
-  '> [INFO]  Threat actor VOLT TYPHOON signature matched — confidence 94%',
+  '> [INFO]  Anomalous traffic pattern matched known reconnaissance behaviour',
   '> [BLOCK] Lateral movement attempt blocked: CTRL-7 → Historian DB',
-  '> [INFO]  Pulling updated IOC feed from GridSec TI Platform...',
-  '> [OK]    12,847 new indicators loaded successfully',
+  '> [INFO]  Pulling updated threat indicator feed...',
+  '> [OK]    Indicator set refreshed successfully',
   '> [ALERT] Unusual DNP3 traffic pattern on feeder 7 — escalating to L2',
   '> [INFO]  Auto-isolation rule triggered: Zone 3 quarantine active',
-  '> [OK]    Incident INC-2024-1187 created and assigned to SOC-Analyst-4',
+  '> [OK]    Incident ticket created and assigned to on-call analyst',
 ]
 
 const SEVERITY_COLORS: Record<string, string> = {
@@ -30,10 +30,10 @@ const SEVERITY_COLORS: Record<string, string> = {
 }
 
 const COUNTERS = [
-  { label: 'Active Threats', value: 3, color: '#ff4444' },
-  { label: 'Blocked Today', value: 1247, color: '#00d4ff' },
-  { label: 'Assets Online', value: 512, color: '#22c55e' },
-  { label: 'Alerts Resolved', value: 98, color: '#7c3aed' },
+  { label: 'Active Alerts', value: 3, color: '#ff4444' },
+  { label: 'Events Reviewed', value: 847, color: '#00d4ff' },
+  { label: 'Assets Monitored', value: 124, color: '#22c55e' },
+  { label: 'Incidents Closed', value: 41, color: '#7c3aed' },
 ]
 
 export default function ThreatDashboard() {
@@ -72,15 +72,15 @@ export default function ThreatDashboard() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="section-label mb-4">// Threat Intelligence Platform</div>
+          <div className="section-label mb-4">// Platform Overview</div>
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6">
-            Real-Time{' '}
+            Continuous{' '}
             <span style={{ background: 'linear-gradient(135deg,#00d4ff,#7c3aed)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-              Threat Visibility
+              Operational Visibility
             </span>
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto text-lg">
-            Our platform continuously monitors your OT environment, correlates threat intelligence, and responds — all before an operator touches a keyboard.
+            Our monitoring platform provides a single operational picture across your generation, storage and network assets — with integrated security event detection and structured escalation workflows.
           </p>
         </motion.div>
 

@@ -1,48 +1,42 @@
 import { motion } from 'framer-motion'
-import { Shield, Activity, AlertTriangle, FileCheck, Eye, Cpu } from 'lucide-react'
+import { Shield, Activity, FileCheck } from 'lucide-react'
 import GlassCard from '../ui/GlassCard'
 
 const SERVICES = [
   {
-    icon: Shield,
-    title: 'OT/ICS Security',
-    description: 'Purpose-built protection for operational technology and industrial control systems — designed for zero-downtime environments.',
-    features: ['Asset discovery & inventory', 'Passive network monitoring', 'Protocol-aware inspection', 'Anomaly detection'],
-    color: '#00d4ff',
-  },
-  {
     icon: Activity,
-    title: 'Threat Intelligence',
-    description: 'Real-time sector-specific threat feeds enriched with energy-sector intelligence from our global sensor network.',
-    features: ['Energy-sector IOCs', 'APT actor tracking', 'Dark web monitoring', 'Threat scoring engine'],
-    color: '#7c3aed',
-  },
-  {
-    icon: Eye,
-    title: 'Security Operations',
-    description: '24/7 managed detection and response from security analysts with deep OT expertise and critical infrastructure experience.',
-    features: ['Continuous monitoring', 'Tier 3 OT expertise', 'Sub-4-minute MTTD', 'Direct CISO access'],
+    title: 'Managed Network Operations',
+    description: 'Continuous monitoring of your renewable energy assets and communication infrastructure. Our NOC team manages performance, availability and fault response across generation, storage and grid-connection assets — so your operational staff have clear visibility and a defined escalation path at all times.',
+    features: [
+      'Asset and performance monitoring',
+      'Fault detection and escalation management',
+      'Remote diagnostics and field coordination',
+      'Integration with SCADA, DMS and EMS platforms',
+    ],
     color: '#00d4ff',
   },
   {
-    icon: AlertTriangle,
-    title: 'Incident Response',
-    description: 'Rapid containment and recovery for cyber incidents in industrial environments — without disrupting operational continuity.',
-    features: ['OT-safe forensics', '4h SLA activation', 'Playbook automation', 'Recovery coordination'],
-    color: '#ff6b35',
+    icon: Shield,
+    title: 'Managed Security Services',
+    description: 'OT-aware threat monitoring and incident response delivered by analysts who understand the operational constraints of industrial environments. We detect, investigate and respond to security events without disrupting the systems your operations depend on.',
+    features: [
+      'Continuous OT/ICS security monitoring',
+      'Incident detection, investigation and response',
+      'Compliance alignment with IEC 62443 and NIS2',
+      'Vulnerability management for operational environments',
+    ],
+    color: '#7c3aed',
   },
   {
     icon: FileCheck,
-    title: 'Compliance & Risk',
-    description: 'Automated compliance management for NERC CIP, IEC 62443, and NIST CSF — with continuous audit-ready reporting.',
-    features: ['NERC CIP automation', 'IEC 62443 alignment', 'Gap assessments', 'Audit-ready reporting'],
-    color: '#7c3aed',
-  },
-  {
-    icon: Cpu,
-    title: 'Vulnerability Management',
-    description: 'Risk-based vulnerability prioritization built for OT environments where patching windows are narrow and stakes are high.',
-    features: ['OT-safe scanning', 'Risk-based scoring', 'Vendor advisories', 'Patch orchestration'],
+    title: 'Assessment & Design Services',
+    description: 'Architecture reviews, security assessments and operational readiness evaluations for organisations building or improving their OT monitoring and security capability. We work with your team to understand current gaps and design the right foundation — whether you are commissioning new assets or maturing an existing programme.',
+    features: [
+      'OT network architecture review and design',
+      'Security posture and gap assessments',
+      'NOC and SOC readiness evaluations',
+      'Reference designs for renewable energy sites',
+    ],
     color: '#00d4ff',
   },
 ]
@@ -61,20 +55,20 @@ export default function Services() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <div className="section-label mb-4">// What We Do</div>
+          <div className="section-label mb-4">// Our Services</div>
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6">
-            Complete{' '}
+            Built for{' '}
             <span style={{ background: 'linear-gradient(135deg,#00d4ff,#7c3aed)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-              Security Coverage
+              Operational Environments
             </span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            From asset discovery to incident recovery — every layer of your operational technology environment protected by specialists who understand energy.
+            Three service lines covering the full operational and security lifecycle — from ongoing managed monitoring through to advisory and design.
           </p>
         </motion.div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {SERVICES.map((service, i) => {
             const Icon = service.icon
             return (

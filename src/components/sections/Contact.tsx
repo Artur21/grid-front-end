@@ -15,9 +15,9 @@ interface FormData {
 }
 
 const CONTACT_INFO = [
-  { icon: Mail, label: 'Email', value: 'security@gridsec.io' },
-  { icon: Phone, label: 'SOC Hotline', value: '+1 (800) GRIDSEC' },
-  { icon: MapPin, label: 'HQ', value: 'Washington D.C., USA' },
+  { icon: Mail, label: 'General Enquiries', value: 'info@smartgrid.io' },
+  { icon: Phone, label: 'Talk to the Team', value: 'Arrange a call via the form' },
+  { icon: MapPin, label: 'Where We Work', value: 'NA · EMEA · APAC · EU · LATAM' },
 ]
 
 export default function Contact() {
@@ -67,13 +67,13 @@ export default function Contact() {
         >
           <div className="section-label mb-4">// Get In Touch</div>
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6">
-            Ready to{' '}
+            Talk to{' '}
             <span style={{ background: 'linear-gradient(135deg,#00d4ff,#7c3aed)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-              Secure Your Grid?
+              the Team
             </span>
           </h2>
           <p className="text-slate-400 text-lg max-w-xl mx-auto">
-            Talk to a GridSec specialist — we'll scope a tailored solution for your infrastructure within 48 hours.
+            Whether you're evaluating managed services, planning a new deployment or looking for an independent assessment — we're happy to have a conversation.
           </p>
         </motion.div>
 
@@ -98,10 +98,10 @@ export default function Contact() {
             <GlassCard delay={0.3} className="p-5">
               <div className="flex items-center gap-2 mb-3">
                 <div className="w-2 h-2 bg-green-400 rounded-full" style={{ boxShadow: '0 0 8px rgba(34,197,94,0.8)' }} />
-                <span className="text-xs font-mono text-green-400">SOC ONLINE — 24/7/365</span>
+                <span className="text-xs font-mono text-green-400">MANAGED SERVICES</span>
               </div>
               <p className="text-xs text-slate-500 leading-relaxed">
-                Critical incident? Our OT-specialist SOC is available around the clock. Average response time under 4 minutes.
+                Already a managed services client? Use the contact details provided during onboarding to reach the operations or security team directly.
               </p>
             </GlassCard>
           </div>
@@ -117,7 +117,7 @@ export default function Contact() {
                 >
                   <CheckCircle size={48} className="text-green-400 mx-auto mb-4" />
                   <h3 className="text-xl font-bold text-white mb-2">Message Received</h3>
-                  <p className="text-slate-400 mb-6">A GridSec specialist will reach out within 48 hours.</p>
+                  <p className="text-slate-400 mb-6">We'll be in touch shortly to arrange a conversation.</p>
                   <button onClick={() => setState('idle')} className="glow-button-outline text-sm px-6 py-2 rounded-lg text-cyan-400 border border-cyan-400/40">
                     Send Another
                   </button>
@@ -143,18 +143,19 @@ export default function Contact() {
                       <label className="block text-xs text-slate-500 mb-2 font-mono uppercase tracking-wider">Your Role</label>
                       <select name="role" value={form.role} onChange={handleChange} className="input-cyber">
                         <option value="">Select role...</option>
-                        <option>CISO / CSO</option>
-                        <option>OT/ICS Security Engineer</option>
-                        <option>IT Security Director</option>
+                        <option>Asset Owner / Operator</option>
                         <option>Operations Manager</option>
-                        <option>C-Suite / Executive</option>
+                        <option>OT / ICS Engineer</option>
+                        <option>Security Manager / CISO</option>
+                        <option>Executive / Director</option>
+                        <option>EPC / Developer</option>
                         <option>Other</option>
                       </select>
                     </div>
                   </div>
                   <div>
                     <label className="block text-xs text-slate-500 mb-2 font-mono uppercase tracking-wider">How Can We Help? *</label>
-                    <textarea name="message" value={form.message} onChange={handleChange} required rows={4} placeholder="Tell us about your infrastructure and security challenges..." className="input-cyber resize-none" />
+                    <textarea name="message" value={form.message} onChange={handleChange} required rows={4} placeholder="Tell us about your portfolio, what you're working on, or what you'd like to discuss." className="input-cyber resize-none" />
                   </div>
 
                   {state === 'error' && (

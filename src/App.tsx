@@ -1,8 +1,8 @@
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import Hero from './components/sections/Hero'
+import AssetSlideshow from './components/sections/AssetSlideshow'
 import Services from './components/sections/Services'
-import ThreatDashboard from './components/sections/ThreatDashboard'
 import About from './components/sections/About'
 import CaseStudies from './components/sections/CaseStudies'
 import Contact from './components/sections/Contact'
@@ -13,8 +13,8 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <AssetSlideshow />
         <Services />
-        <ThreatDashboard />
         <About />
         <CaseStudies />
         <Contact />

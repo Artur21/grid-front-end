@@ -5,9 +5,8 @@ import GlowButton from '../ui/GlowButton'
 
 const NAV_LINKS = [
   { label: 'Services', href: '#services' },
-  { label: 'Platform', href: '#platform' },
   { label: 'About', href: '#about' },
-  { label: 'Case Studies', href: '#case-studies' },
+  { label: 'How We Help', href: '#case-studies' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -45,7 +44,7 @@ export default function Navbar() {
                 <div className="absolute inset-0 bg-cyan-400 rounded-lg blur-md opacity-40 group-hover:opacity-70 transition-opacity" />
               </div>
               <div>
-                <span className="text-white font-bold text-xl tracking-tight">Grid<span className="text-cyan-400">Sec</span></span>
+                <span className="text-white font-bold text-xl tracking-tight">Smart<span className="text-cyan-400">Grid</span></span>
                 <div className="text-[10px] font-mono text-slate-500 leading-none tracking-widest uppercase">Critical Infrastructure</div>
               </div>
             </a>
@@ -61,11 +60,8 @@ export default function Navbar() {
 
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center gap-4">
-              <a href="#contact" className="glow-button-outline text-sm px-5 py-2 rounded-lg font-semibold text-cyan-400 border border-cyan-400/40 hover:bg-cyan-400/10 transition-all">
-                Request Demo
-              </a>
               <a href="#contact" className="glow-button text-sm px-5 py-2 rounded-lg">
-                Get Started
+                Get in Touch
               </a>
             </div>
 
@@ -113,11 +109,8 @@ export default function Navbar() {
                 ))}
               </div>
               <div className="space-y-3 mt-8">
-                <a href="#contact" onClick={() => setMobileOpen(false)} className="glow-button-outline block text-center py-3 rounded-lg font-semibold text-cyan-400 border border-cyan-400/40">
-                  Request Demo
-                </a>
                 <a href="#contact" onClick={() => setMobileOpen(false)} className="glow-button block text-center py-3 rounded-lg">
-                  Get Started
+                  Get in Touch
                 </a>
               </div>
             </div>

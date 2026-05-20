@@ -1,10 +1,10 @@
 import { Shield, Twitter, Linkedin, Github, ExternalLink } from 'lucide-react'
 
 const FOOTER_LINKS = {
-  Platform: ['OT/ICS Security', 'Threat Intelligence', 'SOC Services', 'Incident Response', 'Compliance'],
-  Company: ['About Us', 'Leadership', 'Careers', 'Press', 'Contact'],
-  Resources: ['Documentation', 'Case Studies', 'Threat Reports', 'Blog', 'Webinars'],
-  Legal: ['Privacy Policy', 'Terms of Service', 'Security', 'Cookie Policy'],
+  Services: ['Managed Network Operations', 'Managed Security Services', 'Assessment & Design', 'Contact Us'],
+  Company: ['About Us', 'Careers', 'Contact'],
+  Resources: ['Case Studies', 'Insights', 'Blog'],
+  Legal: ['Privacy Policy', 'Terms of Service', 'Cookie Policy'],
 }
 
 const SOCIALS = [
@@ -27,10 +27,10 @@ export default function Footer() {
                 </div>
                 <div className="absolute inset-0 bg-cyan-400 rounded-lg blur-md opacity-30" />
               </div>
-              <span className="text-white font-bold text-xl">Grid<span className="text-cyan-400">Sec</span></span>
+              <span className="text-white font-bold text-xl">Smart<span className="text-cyan-400">Grid</span></span>
             </div>
             <p className="text-sm text-slate-500 leading-relaxed mb-6 max-w-xs">
-              The trusted cybersecurity partner for energy utilities, grid operators, and critical infrastructure worldwide.
+              Managed NOC and SOC services for operators of renewable energy and critical infrastructure — built by people who understand OT environments.
             </p>
             <div className="flex gap-3">
               {SOCIALS.map(s => {
@@ -64,15 +64,11 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-slate-600">
-            © {new Date().getFullYear()} GridSec, Inc. All rights reserved.
+            © {new Date().getFullYear()} SmartGrid. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2 text-xs text-slate-700">
-              <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-              All systems operational
-            </div>
-            <a href="#" className="flex items-center gap-1 text-xs text-slate-700 hover:text-slate-400 transition-colors">
-              Status Page <ExternalLink size={10} />
+            <a href="#contact" className="flex items-center gap-1 text-xs text-slate-700 hover:text-slate-400 transition-colors">
+              Get in touch <ExternalLink size={10} />
             </a>
           </div>
         </div>

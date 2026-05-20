@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, Shield, Zap, Lock } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import CyberGrid from '../ui/CyberGrid'
 import ParticleField from '../ui/ParticleField'
 import GlowButton from '../ui/GlowButton'
 
 const TYPING_STRINGS = [
-  'Energy Grid Networks.',
-  'Industrial Control Systems.',
-  'Critical Infrastructure.',
-  'SCADA Environments.',
-  'Power Generation Assets.',
+  'Solar Generation Assets.',
+  'Wind Farm Networks.',
+  'Battery Storage Systems.',
+  'OT Control Environments.',
+  'Grid-Connected Infrastructure.',
 ]
 
 function TypingText() {
@@ -44,11 +44,11 @@ function TypingText() {
   )
 }
 
-const STATS = [
-  { value: '500+', label: 'Infrastructure Assets Protected', icon: Shield },
-  { value: '99.97%', label: 'Threat Detection Rate', icon: Zap },
-  { value: '<4min', label: 'Mean Time to Detect', icon: Lock },
-  { value: '24/7', label: 'SOC Monitoring', icon: Shield },
+const PILLARS = [
+  { label: 'Managed NOC', detail: 'Continuous operational monitoring' },
+  { label: 'Managed SOC', detail: 'OT-aware security operations' },
+  { label: 'Solar · Wind · BESS', detail: 'Renewable energy focus' },
+  { label: 'Assessment & Design', detail: 'Advisory and architecture' },
 ]
 
 export default function Hero() {
@@ -75,7 +75,7 @@ export default function Hero() {
           >
             <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/5">
               <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse-glow" />
-              <span className="text-xs font-mono text-cyan-400 tracking-widest uppercase">OT/ICS Security Leader 2024</span>
+              <span className="text-xs font-mono text-cyan-400 tracking-widest uppercase">Renewable Energy · OT Operations & Security</span>
             </div>
           </motion.div>
 
@@ -86,7 +86,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-none mb-4"
           >
-            Defending the{' '}
+            Managed operations and security for{' '}
             <span
               className="block"
               style={{
@@ -96,7 +96,7 @@ export default function Hero() {
                 backgroundClip: 'text',
               }}
             >
-              World's Grid
+              Renewable Energy Infrastructure
             </span>
           </motion.h1>
 
@@ -118,7 +118,7 @@ export default function Hero() {
             transition={{ delay: 0.5 }}
             className="text-lg text-slate-400 max-w-2xl leading-relaxed mb-10"
           >
-            GridSec delivers purpose-built cybersecurity for energy utilities, power generators, and industrial operators. Our AI-powered platform provides continuous threat intelligence, real-time OT/IT monitoring, and rapid incident response — engineered for zero downtime.
+            We work with operators of solar, wind and battery storage assets to improve how their infrastructure is monitored, managed and secured. Our team brings hands-on OT experience to every engagement — helping clients find and implement the right operational and security approach for their environment.
           </motion.p>
 
           {/* CTAs */}
@@ -130,32 +130,27 @@ export default function Hero() {
           >
             <a href="#contact">
               <GlowButton className="flex items-center gap-2 text-base px-8 py-4">
-                Request a Demo
+                Get in Touch
                 <ArrowRight size={18} />
               </GlowButton>
             </a>
-            <a href="#platform" className="glow-button-outline flex items-center gap-2 text-base px-8 py-4">
-              Explore Platform
+            <a href="#services" className="glow-button-outline flex items-center gap-2 text-base px-8 py-4">
+              Our Services
             </a>
           </motion.div>
         </div>
 
-        {/* Stats row */}
+        {/* Capability pillars */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.8 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-4"
         >
-          {STATS.map((stat) => (
-            <div
-              key={stat.label}
-              className="glass-card p-5 text-center"
-            >
-              <div className="text-3xl font-extrabold mb-1" style={{ background: 'linear-gradient(135deg, #00d4ff, #7c3aed)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-                {stat.value}
-              </div>
-              <div className="text-xs text-slate-500 leading-tight">{stat.label}</div>
+          {PILLARS.map((p) => (
+            <div key={p.label} className="glass-card p-5">
+              <div className="text-sm font-bold text-white mb-1">{p.label}</div>
+              <div className="text-xs text-slate-500 leading-snug">{p.detail}</div>
             </div>
           ))}
         </motion.div>
