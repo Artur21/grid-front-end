@@ -66,19 +66,7 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-32 pb-20">
         <div className="max-w-5xl">
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 mb-8"
-          >
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/5">
-              <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse-glow" />
-              <span className="text-xs font-mono text-cyan-400 tracking-widest uppercase">Renewable Energy · OT Operations & Security</span>
-            </div>
-          </motion.div>
-
+      
           {/* Main headline */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
