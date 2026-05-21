@@ -58,14 +58,11 @@
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
-    transition: all 0.3s ease;
-  }
-
-  .glass-card:hover {
-    background: rgba(255, 255, 255, 0.07);
-    border-color: rgba(0, 212, 255, 0.3);
-    box-shadow: 0 0 30px rgba(0, 212, 255, 0.1), inset 0 1px 0 rgba(255,255,255,0.1);
-    transform: translateY(-4px);
+    box-shadow:
+      0 0 0 0.5px rgba(255, 255, 255, 0.05),
+      0 8px 32px rgba(0, 0, 0, 0.45),
+      0 0 48px rgba(0, 212, 255, 0.07),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
   }
 
   .glow-button {
@@ -202,6 +199,22 @@
 
   .input-cyber::placeholder {
     color: #475569;
+  }
+
+  select.input-cyber {
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2300d4ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-color: rgba(255, 255, 255, 0.04);
+    padding-right: 38px;
+    cursor: pointer;
+  }
+
+  select.input-cyber option {
+    background: #0d0d14;
+    color: #f1f5f9;
   }
 
   .stat-card {

@@ -3,6 +3,18 @@ import { motion } from 'framer-motion'
 import { Send, CheckCircle, AlertCircle, Loader2, Mail, Phone, MapPin } from 'lucide-react'
 import GlassCard from '../ui/GlassCard'
 import GlowButton from '../ui/GlowButton'
+import SelectCyber from '../ui/SelectCyber'
+
+const ROLE_OPTIONS = [
+  { value: '', label: 'Select role...' },
+  { value: 'Asset Owner / Operator', label: 'Asset Owner / Operator' },
+  { value: 'Operations Manager', label: 'Operations Manager' },
+  { value: 'OT / ICS Engineer', label: 'OT / ICS Engineer' },
+  { value: 'Security Manager / CISO', label: 'Security Manager / CISO' },
+  { value: 'Executive / Director', label: 'Executive / Director' },
+  { value: 'EPC / Developer', label: 'EPC / Developer' },
+  { value: 'Other', label: 'Other' },
+]
 
 type FormState = 'idle' | 'loading' | 'success' | 'error'
 
@@ -141,16 +153,13 @@ export default function Contact() {
                     </div>
                     <div>
                       <label className="block text-xs text-slate-500 mb-2 font-mono uppercase tracking-wider">Your Role</label>
-                      <select name="role" value={form.role} onChange={handleChange} className="input-cyber">
-                        <option value="">Select role...</option>
-                        <option>Asset Owner / Operator</option>
-                        <option>Operations Manager</option>
-                        <option>OT / ICS Engineer</option>
-                        <option>Security Manager / CISO</option>
-                        <option>Executive / Director</option>
-                        <option>EPC / Developer</option>
-                        <option>Other</option>
-                      </select>
+                      <SelectCyber
+                        name="role"
+                        value={form.role}
+                        onChange={val => setForm(prev => ({ ...prev, role: val }))}
+                        options={ROLE_OPTIONS}
+                        placeholder="Select role..."
+                      />
                     </div>
                   </div>
                   <div>

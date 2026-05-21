@@ -1,10 +1,28 @@
 import { Shield, Twitter, Linkedin, Github, ExternalLink } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
-const FOOTER_LINKS = {
-  Services: ['Managed Network Operations', 'Managed Security Services', 'Assessment & Design', 'Contact Us'],
-  Company: ['About Us', 'Careers', 'Contact'],
-  Resources: ['Case Studies', 'Insights', 'Blog'],
-  Legal: ['Privacy Policy', 'Terms of Service', 'Cookie Policy'],
+const FOOTER_LINKS: Record<string, { label: string; to: string }[]> = {
+  Services: [
+    { label: 'Managed Network Operations', to: '/#services' },
+    { label: 'Managed Security Services', to: '/#services' },
+    { label: 'Assessment & Design', to: '/#services' },
+    { label: 'Contact Us', to: '/#contact' },
+  ],
+  Company: [
+    { label: 'About Us', to: '/company/about' },
+    { label: 'Careers', to: '/company/careers' },
+    { label: 'Contact', to: '/#contact' },
+  ],
+  Resources: [
+    { label: 'Case Studies', to: '/#case-studies' },
+    { label: 'Insights', to: '/resources/insights' },
+    { label: 'Blog', to: '/resources/insights' },
+  ],
+  Legal: [
+    { label: 'Privacy Policy', to: '/legal/privacy-policy' },
+    { label: 'Terms of Service', to: '/legal/terms' },
+    { label: 'Cookie Policy', to: '/legal/cookies' },
+  ],
 }
 
 const SOCIALS = [
@@ -13,6 +31,21 @@ const SOCIALS = [
   { icon: Github, label: 'GitHub', href: '#' },
 ]
 
+function FooterLink({ label, to }: { label: string; to: string }) {
+  if (to.startsWith('/#')) {
+    return (
+      <a href={to} className="text-sm text-slate-600 hover:text-slate-300 transition-colors">
+        {label}
+      </a>
+    )
+  }
+  return (
+    <Link to={to} className="text-sm text-slate-600 hover:text-slate-300 transition-colors">
+      {label}
+    </Link>
+  )
+}
+
 export default function Footer() {
   return (
     <footer className="relative border-t border-white/5" style={{ background: '#030305' }}>
@@ -20,7 +53,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-2">
-            <div className="flex items-center gap-3 mb-4">
+            <Link to="/" className="flex items-center gap-3 mb-4 w-fit">
               <div className="relative">
                 <div className="w-9 h-9 bg-gradient-to-br from-cyan-400 to-violet-600 rounded-lg flex items-center justify-center">
                   <Shield size={18} className="text-black" strokeWidth={2.5} />
@@ -28,7 +61,7 @@ export default function Footer() {
                 <div className="absolute inset-0 bg-cyan-400 rounded-lg blur-md opacity-30" />
               </div>
               <span className="text-white font-bold text-xl">Smart<span className="text-cyan-400">Grid</span></span>
-            </div>
+            </Link>
             <p className="text-sm text-slate-500 leading-relaxed mb-6 max-w-xs">
               Managed NOC and SOC services for operators of renewable energy and critical infrastructure — built by people who understand OT environments.
             </p>
@@ -36,7 +69,12 @@ export default function Footer() {
               {SOCIALS.map(s => {
                 const Icon = s.icon
                 return (
-                  <a key={s.label} href={s.href} className="w-9 h-9 rounded-lg flex items-center justify-center border border-white/8 text-slate-500 hover:text-cyan-400 hover:border-cyan-400/30 transition-all">
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    aria-label={s.label}
+                    className="w-9 h-9 rounded-lg flex items-center justify-center border border-white/8 text-slate-500 hover:text-cyan-400 hover:border-cyan-400/30 transition-all"
+                  >
                     <Icon size={16} />
                   </a>
                 )
@@ -47,13 +85,13 @@ export default function Footer() {
           {/* Links */}
           {Object.entries(FOOTER_LINKS).map(([category, links]) => (
             <div key={category}>
-              <h4 className="text-xs font-mono text-slate-400 uppercase tracking-widest mb-4">{category}</h4>
+              <h4 className="text-xs font-mono text-slate-400 uppercase tracking-widest mb-4">
+                {category}
+              </h4>
               <ul className="space-y-3">
                 {links.map(link => (
-                  <li key={link}>
-                    <a href="#" className="text-sm text-slate-600 hover:text-slate-300 transition-colors">
-                      {link}
-                    </a>
+                  <li key={link.label}>
+                    <FooterLink label={link.label} to={link.to} />
                   </li>
                 ))}
               </ul>
@@ -67,7 +105,7 @@ export default function Footer() {
             © {new Date().getFullYear()} SmartGrid. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <a href="#contact" className="flex items-center gap-1 text-xs text-slate-700 hover:text-slate-400 transition-colors">
+            <a href="/#contact" className="flex items-center gap-1 text-xs text-slate-700 hover:text-slate-400 transition-colors">
               Get in touch <ExternalLink size={10} />
             </a>
           </div>

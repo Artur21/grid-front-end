@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Shield, Menu, X, ChevronRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import GlowButton from '../ui/GlowButton'
 
 const NAV_LINKS = [
@@ -36,7 +37,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <a href="#" className="flex items-center gap-3 group">
+            <Link to="/" className="flex items-center gap-3 group">
               <div className="relative">
                 <div className="w-9 h-9 bg-gradient-to-br from-cyan-400 to-violet-600 rounded-lg flex items-center justify-center">
                   <Shield size={18} className="text-black" strokeWidth={2.5} />
@@ -47,7 +48,7 @@ export default function Navbar() {
                 <span className="text-white font-bold text-xl tracking-tight">Smart<span className="text-cyan-400">Grid</span></span>
                 <div className="text-[10px] font-mono text-slate-500 leading-none tracking-widest uppercase">Critical Infrastructure</div>
               </div>
-            </a>
+            </Link>
 
             {/* Desktop links */}
             <div className="hidden lg:flex items-center gap-8">
